@@ -20,7 +20,7 @@ const Offer = () => {
       <div className="price">
         <h5>₹{e.price}</h5>
       </div>
-      <button>Add TO Cart</button>
+      <button>Read..</button>
 
     </div>
   
