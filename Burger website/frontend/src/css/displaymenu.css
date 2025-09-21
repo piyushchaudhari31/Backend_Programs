@@ -1,7 +1,0 @@
-.Displaymenu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem 12rem;
-  justify-content: flex-start; 
-}
