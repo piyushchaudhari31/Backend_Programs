@@ -1,0 +1,55 @@
+.about{
+    padding: 6rem 5rem;
+}
+.describe button{
+    padding:4px 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    
+}
+.describe button:hover{
+    background-color: rgb(97, 95, 95);
+    border: none;
+}
+.about_page{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    
+}
+.about_img video{
+    height: 700px;
+    width: 500px;
+    border-radius: 20px;
+    object-fit: cover;
+    cursor:pointer;
+}
+.name h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: regular;
+}
+.paragraph{
+    font-size: 20px;
+    font-family: 200;
+    width: 80%;
+    line-height: 2rem;
+    margin-bottom: 20px;
+    font-family: bold_txt;
+}
+.short_line{
+    font-size: 25px;
+    width: 80%;
+    opacity: 0.6;
+}
+
+@media (max-width:780px){
+    .about_page{
+        flex-direction: column;
+    }
+    
+
+}
