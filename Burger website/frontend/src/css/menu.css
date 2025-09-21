@@ -96,22 +96,12 @@
     cursor: pointer;
     font-family: Engravers MT;
     color: white;
-    border: 1px solid tomato;
-    background-color: transparent;
-    z-index: 1;
+    background-color: white;
     overflow: hidden;
+    transition: all 0.3s ease
 }
-.All_menu button::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
+.All_menu button:hover{
     background-color: tomato;
-    z-index: -1;
-    transition: width 0.6s ease;
-}
-.All_menu button:hover::before{
-    width: 100%;
+    color: white;
+
 }
