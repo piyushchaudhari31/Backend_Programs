@@ -1,22 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ReactContext } from '../context/Context'
 import Fooditem from './Fooditem'
+import axios from 'axios'
 import '../css/displaymenu.css'
 const Displaymenu = () => {
 
-    const {menuDisplay , category} = useContext(ReactContext)
+    const {fetchfood , category , menuList} = useContext(ReactContext)
     
     
-    
+    useEffect(()=>{
+      fetchfood()
+    },[])
     
   return (
     <div>
       <div className="Displaymenu">
-        {menuDisplay.map((item,id)=>{          
+        {menuList.map((item,id)=>{          
             
               
-            if(category == "All" || category === item.category){
-                return <Fooditem key={id} id={item._id} image={item.food_image} name={item.food_name} price={item.price} category={item.category}/>
+            if(category === item.category){
+                return <Fooditem key={id} id={item._id} image={item.image} name={item.name} price={item.price} category={item.category}/>
             }
 
         })}

@@ -21,7 +21,7 @@ const Foodmenu = () => {
       <div className='foodmenu'>
 
         <div className="close">
-          <button onClick={navigateHandler} className='close_btn'><i class="ri-close-line"></i></button>
+          <button onClick={navigateHandler} className='close_btn'><i className="ri-close-line"></i></button>
         </div>
 
         <div className="header">
