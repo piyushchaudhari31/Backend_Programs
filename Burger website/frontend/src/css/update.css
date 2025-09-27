@@ -1,56 +1,111 @@
-.update{
+.update {
     padding: 3rem;
-}
-.update_detail{
-    margin-top: 2rem;
-    display: flex;
-    gap: 5rem;
-}
-.left_pannel img{
-    height: 500px;
-    width: 600px;
-}
-.left_pannel h4{
-    font-size: 3rem;
-    text-transform: capitalize;
-}
-.right_pannel form{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    background: #f5f7fa;
+    min-height: 100vh
+    
 }
 
-.right_pannel {
-    padding: 5rem;
+.update h1 {
+    font-size: 5.5rem;
+    font-weight: 600;
+    color: tomato;
+    margin-bottom: 2rem;
+    font-family: Chiller;
+
 }
 
-.right_pannel input{
-    padding: 1rem;
-    font-size: 1.5rem;
+.update_detail {
+    margin-top: 1rem;
+    display: flex;
+    gap: 4rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 85%;
+    max-width: 1200px;
 }
-.right_pannel select{
-    padding: 1rem;
-    font-size: 1.5rem;
+
+.left_side .leftimg{
+    height: 400px;
+    width: 500px;
+    object-fit: cover;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    transition: transform 0.3s ease;
 }
-.right_pannel .button{
+
+.left_side h4 {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-top: 1rem;
+    color: rgb(73, 73, 73);
+    font-family: light;
+    text-align: center;
+}
+.left_side h4 span{
+    font-family: bold_txt;
+    font-weight: 700;
+}
+.right_side{
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right_side form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+.right_side input,
+.right_side select {
+    padding: 0.9rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+
+.right_side .button {
     display: flex;
     gap: 1.2rem;
 }
-.right_pannel .updatebtn{
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    background-color: rgb(14, 14, 207);
+
+.right_side .updatebtn,
+.right_side .closebtn {
+    flex: 1;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
     color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-.right_pannel .closebtn{
-    justify-content: center;
-    width: 50%;
-    background-color: red;
-    color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
     
+}
+
+.right_side .updatebtn {
+    background-color: #4a90e2;
+}
+.right_side .updatebtn:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+.right_side .closebtn {
+    background-color: #e74c3c;
+}
+.right_side .closebtn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
 }

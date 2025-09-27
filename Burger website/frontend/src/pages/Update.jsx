@@ -68,11 +68,11 @@ const Update = () => {
     <div className='update'>
       <h1>Update</h1>
       <div className="update_detail">
-        <div className="left_pannel">
-          <img src={food.image} alt="" />
-          <h4>Name:- {food.name}</h4>
+        <div className="left_side">
+          <img className='leftimg' src={food.image} alt="" />
+          <h4><span>{food.name}</span> and<span> ₹{food.price}</span> faster than you can say “extra cheese, please!” 🧀💰</h4>
         </div>
-        <div className="right_pannel">
+        <div className="right_side">
           <form onSubmit={handleSubmit(submitHanlder)}>
             <input type="text" {...register("name")} />
             <input type="text" {...register("price")}/>
