@@ -1,0 +1,56 @@
+.update{
+    padding: 3rem;
+}
+.update_detail{
+    margin-top: 2rem;
+    display: flex;
+    gap: 5rem;
+}
+.left_pannel img{
+    height: 500px;
+    width: 600px;
+}
+.left_pannel h4{
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+.right_pannel form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right_pannel {
+    padding: 5rem;
+}
+
+.right_pannel input{
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.right_pannel select{
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.right_pannel .button{
+    display: flex;
+    gap: 1.2rem;
+}
+.right_pannel .updatebtn{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    background-color: rgb(14, 14, 207);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.right_pannel .closebtn{
+    justify-content: center;
+    width: 50%;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    
+}

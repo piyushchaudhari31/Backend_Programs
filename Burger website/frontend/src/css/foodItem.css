@@ -40,21 +40,29 @@ button{
     font-size: 1rem;
 }
 .button .read{
-    background-color: rgb(50, 50, 177);
+    background-color: rgb(71, 71, 169);
     color: white;
+    border: none;
 }
 .button .read:hover{
-    cursor: no-drop;
-    background-color: #d1cfcf;
-    color: black;
+    cursor: pointer;
+    background-color: rgb(64, 64, 250);;
+    color: white;
     border: none;
 }
 .button .delete{
-    background-color: rgb(195, 45, 45);
+    background-color: rgb(182, 51, 51);
     color: white;
     cursor: pointer;
+    border: none;
 
 }
+.button .delete:hover{
+    background-color: rgb(255, 27, 27);
+    color: white;
+    border: none;
+}
+.button.read:active,
 .button .delete:active{
     scale: 0.94;
     

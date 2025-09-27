@@ -46,6 +46,38 @@ async function deleteFood(req,res){
     })
 }
 
+async function getFoodById(req,res){
+
+    const foodId = req.params.id
+    const food = await foodModel.findOne({
+        _id:foodId
+    })
+
+    res.status(200).json({
+        message:"Fetched Successfully",
+        food
+    })
+
+}
+
+async function updateFood(req,res){
+    const foodId = req.params._id
+    const {name,category,price} = req.body
+    
+    const food = await foodModel.findOneAndUpdate({
+        _id:foodId
+    },{
+        name:name,
+        price:price,
+        category:category
+    })
+
+    res.status(200).json({
+        message:"Update Sucessfully",
+        food
+    })
+}
 
 
-module.exports = {addFood ,getFood,deleteFood}
+
+module.exports = {addFood ,getFood,deleteFood,getFoodById,updateFood}
