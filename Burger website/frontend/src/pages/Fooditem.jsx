@@ -7,27 +7,8 @@ import { useNavigate } from 'react-router-dom'
 const Fooditem = ({ id, name, price, image, category }) => {
 
   const navigate = useNavigate()
-  const {fetchfood} = useContext(ReactContext)
-
-
-
-
-  const getCardHandler = async(id)=>{
-    try {
-      const response = await axios.delete(`http://localhost:3000/api/food/delete/${id}`)
-      fetchfood()      
-    } catch (error) {
-      console.log(error.message);
-      
-    }
-    
-  }
-
-  const getCardUpdate = async(id)=>{
-    console.log(id);
-    navigate(`/update/${id}`)
-    
-  }
+  const {cartitem,add_to_cart,remove_to_cart} = useContext(ReactContext)
+  
 
   return (
     <div>
@@ -43,13 +24,18 @@ const Fooditem = ({ id, name, price, image, category }) => {
           <div className="food_img_price">
             <h5>₹{price}</h5>
           </div>
-          <div className="button">
-            <button className='read' onClick={()=>getCardUpdate(id)}>update</button>
-            <button className='delete' onClick={()=>getCardHandler(id)}>Delete</button>
+          {!cartitem[id]? <><div className="add_Cart addition" onClick={()=>add_to_cart(id)}><i className="ri-add-line"></i></div></>:
+          <div className="add_Cart">
+            
+            <div className="remove" onClick={()=>remove_to_cart(id)}><i className="ri-subtract-fill"></i></div>
+            <h1 className='add_cart_name'>{cartitem[id]}</h1>
+            <div className="addition" onClick={()=>add_to_cart(id)}><i className="ri-add-line"></i></div>
+            
           </div>
+          }
         </div>
       </div>
-    // </div>
+    
   )
 }
 

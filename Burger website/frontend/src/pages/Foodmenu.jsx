@@ -6,12 +6,12 @@ import Self from '../pages/Components/Self'
 import Footer from '../pages/Components/footer'
 import photot from '../photo/background.webp'
 import { useNavigate } from 'react-router-dom'
+import Nav from '../Navbar/Nav'
+import Menu_nav from '../Navbar/Menu_nav'
 
 const Foodmenu = () => {
 
   const nevigate = useNavigate()
-
-
   const navigateHandler =()=>{
     nevigate('/')
   }
@@ -19,11 +19,10 @@ const Foodmenu = () => {
   return (
     <div className='foodmenu_page'>
       <div className='foodmenu'>
-
         <div className="close">
           <button onClick={navigateHandler} className='close_btn'><i className="ri-close-line"></i></button>
         </div>
-
+        <Menu_nav />
         <div className="header">
           <img src={photot} alt="" />
           <h1>Menu</h1>

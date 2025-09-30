@@ -3,6 +3,7 @@
 .food_item_card {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
     flex-direction: column;
     align-items: center;
     width: 260px;
@@ -24,7 +25,7 @@
     font-size: 1.4rem;
     text-transform: capitalize;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 3rem;
     font-family: regular;
 }
 
@@ -32,38 +33,34 @@
     font-size: 1.5rem;
     color: #555;
 }
-.button {
+.add_Cart{
+    align-items: center;
     display: flex;
-    gap: 0.2rem;
+    position: absolute;
+    top: 50%;
+    gap: 0.3rem;
+    right: 10%;
 }
-button{
-    font-size: 1rem;
-}
-.button .read{
-    background-color: rgb(71, 71, 169);
-    color: white;
-    border: none;
-}
-.button .read:hover{
-    cursor: pointer;
-    background-color: rgb(64, 64, 250);;
-    color: white;
-    border: none;
-}
-.button .delete{
-    background-color: rgb(182, 51, 51);
+.addition i{
+    background-color: green;
+    padding: 0.5rem;
+    border-radius: 50%;
     color: white;
     cursor: pointer;
-    border: none;
+}
+.add_Cart .remove i{
+    background-color: red;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
 
-}
-.button .delete:hover{
-    background-color: rgb(255, 27, 27);
+.add_Cart .add_cart_name{
+    font-weight: 100;
+    background-color: #555;
+    padding:0.1rem 0.5rem;
     color: white;
-    border: none;
-}
-.button.read:active,
-.button .delete:active{
-    scale: 0.94;
-    
+    font-size: 1.5rem;
+    border-radius: 5px;
 }

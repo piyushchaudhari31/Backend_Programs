@@ -5,7 +5,7 @@
 
 .header {
     position: relative;
-    height: 20vw;
+    height: 30vw;
     width: 100%;
     
 }
@@ -13,7 +13,7 @@
 .header img {
     position: absolute;
     object-fit: cover;
-    height: 20vw;
+    height: 30vw;
     top: 0;
     left: 0;
     width: 100%;

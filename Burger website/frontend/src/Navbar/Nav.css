@@ -26,6 +26,9 @@
   color: white;
 }
 
+.nav li i{
+  color: white;
+}
 .nav a {
   text-decoration: none;
   color: white;
@@ -39,8 +42,20 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.navbar_icon .dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: tomato;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+}
+
 .fixed-nav li,
+.fixed-nav li i,
 .fixed-nav a,
 .fixed-nav .name {
   color: black;
 }
+

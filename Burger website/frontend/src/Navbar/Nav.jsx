@@ -63,6 +63,11 @@ const Nav = () => {
         <li>
           <a href='#contact_page' className={`${isActive === 'Contact' ? 'active' : ''}`} onClick={() => setIsactive('Contact')}>Contact</a>
         </li>
+        <div className="navbar_icon">
+
+        <li><i class="ri-shopping-cart-line"></i></li>
+        <div className="dot"></div>
+        </div>
        
       </ul>
     </div>

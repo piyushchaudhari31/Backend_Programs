@@ -12,6 +12,7 @@ const Context = (props) => {
   const [cartitem, setcartitem] = useState({})
   const[menuList,setMenuList] = useState([])
 
+  
   const fetchfood = async () => {
     try {
       const response = await axios.get("http://localhost:3000/api/food/get")
@@ -23,6 +24,24 @@ const Context = (props) => {
     }
   }
 
+  const add_to_cart = (item)=>{
+    if(!cartitem[item]){
+      setcartitem((prev)=>({...prev , [item]:1}))      
+    }
+    else{
+      setcartitem((prev)=>({...prev,[item]:prev[item]+1}))
+      
+      
+    }
+    
+
+  }
+  const remove_to_cart = (item)=>{
+    setcartitem((prev)=>({...prev , [item]:prev[item]-1}))
+    
+
+  }
+
   const cartvalue = {
     offer,
     cartitem,
@@ -30,6 +49,8 @@ const Context = (props) => {
     foodlist, menuDisplay,
     category,
     setcategory,
+    add_to_cart,
+    remove_to_cart,
     menuList,
     setMenuList,
     fetchfood
