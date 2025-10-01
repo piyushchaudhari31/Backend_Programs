@@ -41,6 +41,9 @@
   height: 5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+.navbar_icon{
+  position: relative;
+}
 
 .navbar_icon .dot {
   position: absolute;
@@ -49,7 +52,7 @@
   background-color: tomato;
   border-radius: 50%;
   top: -5px;
-  right: -5px;
+  right: -10px;
 }
 
 .fixed-nav li,
@@ -58,4 +61,3 @@
 .fixed-nav .name {
   color: black;
 }
-

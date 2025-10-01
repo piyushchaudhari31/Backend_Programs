@@ -66,7 +66,7 @@ const Nav = () => {
         <div className="navbar_icon">
 
         <li><i class="ri-shopping-cart-line"></i></li>
-        <div className="dot"></div>
+        
         </div>
        
       </ul>

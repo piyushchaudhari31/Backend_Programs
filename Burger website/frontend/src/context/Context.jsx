@@ -42,6 +42,21 @@ const Context = (props) => {
 
   }
 
+  const getTotalAmount = ()=>{
+    let totalAmount = 0
+    for(let item in cartitem){
+      if(cartitem[item]>0){
+        let itemInfo = menuList.find((product)=> product._id === item)
+        if(itemInfo){
+          totalAmount += itemInfo.price * cartitem[item]
+        }
+      }
+      
+    }
+
+    return totalAmount
+  }
+
   const cartvalue = {
     offer,
     cartitem,
@@ -53,7 +68,8 @@ const Context = (props) => {
     remove_to_cart,
     menuList,
     setMenuList,
-    fetchfood
+    fetchfood,
+    getTotalAmount
   }
   return (
     <ReactContext.Provider value={cartvalue}>{props.children}</ReactContext.Provider>
