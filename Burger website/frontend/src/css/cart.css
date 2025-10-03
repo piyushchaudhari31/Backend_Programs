@@ -89,6 +89,7 @@
 .Total_btn .process_btn{
   background-color: tomato;
   color: white;
+  cursor: pointer;
 }
 .Total_btn .close_button{
   background-color: rgb(195, 52, 52);

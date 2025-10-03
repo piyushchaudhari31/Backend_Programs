@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Navbar/Nav.css';
+import { ReactContext } from '../context/Context';
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isActive, setIsactive] = useState('Home');
+  const {token,setToken,getTotalAmount} = useContext(ReactContext)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +48,15 @@ const Nav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const logOutHandler = async()=>{
+    localStorage.removeItem("token")
+    setToken("")
+    navigate('/')
+  
+    
+  }
+
+
   return (
     <div className={`nav ${scrolled ? 'fixed-nav' : ''}`}>
       <ul>
@@ -65,11 +77,23 @@ const Nav = () => {
         </li>
         <div className="navbar_icon">
 
-        <li><i class="ri-shopping-cart-line"></i></li>
+        <div className="navbar_icon">
+                <li><Link to='/cart'><i className="ri-shopping-cart-line"></i></Link></li>
+                <div className={`${getTotalAmount()== 0 ? "":"dot"}`}></div>
+        
+                </div>
         
         </div>
-       
+
       </ul>
+      {!token ? <button><Link to='/login'>Sign in</Link></button>:
+             
+                <button onClick={logOutHandler}>Log Out</button>
+            
+
+
+            
+            }
     </div>
   );
 };

@@ -19,9 +19,7 @@ const Foodmenu = () => {
   return (
     <div className='foodmenu_page'>
       <div className='foodmenu'>
-        <div className="close">
-          <button onClick={navigateHandler} className='close_btn'><i className="ri-close-line"></i></button>
-        </div>
+        
         <Menu_nav />
         <div className="header">
           <img src={photot} alt="" />

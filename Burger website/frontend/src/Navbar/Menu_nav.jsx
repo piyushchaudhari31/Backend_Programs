@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ReactContext } from '../context/Context';
 // import '../Navbar/Nav.css'
 
 
 const Menu_nav = () => {
     const [isActive, setIsactive] = useState('Home');
-    const {getTotalAmount} = useContext(ReactContext)
-
+    const {getTotalAmount,token,setToken} = useContext(ReactContext)
+    const navigate = useNavigate()
     const [nav,setNav] = useState(false)
 
     useEffect(()=>{
@@ -16,6 +16,13 @@ const Menu_nav = () => {
         })
     },[])
 
+    const logOutHandler =()=>{
+      localStorage.removeItem("token")
+      setToken("")
+      navigate('/foodmenu')
+    
+
+    }
   return (
     <div className={`nav ${nav ? 'fixed-nav ':''}`}>
         <ul>
@@ -29,6 +36,8 @@ const Menu_nav = () => {
         </div>
        
       </ul>
+      {!token ? <button><Link to='/login'>Login</Link></button>:<button onClick={logOutHandler}>Log Out</button>}
+      
       
     </div>
   )

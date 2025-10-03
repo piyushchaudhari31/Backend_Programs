@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { foodlist, menuDisplay, offer } from '../../src/photo/photo'
 import axios from 'axios'
 
@@ -9,6 +9,7 @@ const Context = (props) => {
 
 
   const [category, setcategory] = useState('ALL')
+  const [token, setToken] = useState("")
   const [cartitem, setcartitem] = useState({})
   const[menuList,setMenuList] = useState([])
 
@@ -57,6 +58,16 @@ const Context = (props) => {
     return totalAmount
   }
 
+  useEffect(()=>{
+    async function loadData() {
+      const saveToken = localStorage.getItem("token")
+      if(saveToken){
+        setToken(saveToken)
+      }
+    }
+    loadData()
+  })
+
   const cartvalue = {
     offer,
     cartitem,
@@ -69,7 +80,9 @@ const Context = (props) => {
     menuList,
     setMenuList,
     fetchfood,
-    getTotalAmount
+    getTotalAmount,
+    token,
+    setToken
   }
   return (
     <ReactContext.Provider value={cartvalue}>{props.children}</ReactContext.Provider>

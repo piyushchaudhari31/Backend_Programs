@@ -7,13 +7,6 @@ const Cart = () => {
   const navigate = useNavigate()
   const { cartitem, menuList, fetchfood, remove_to_cart, getTotalAmount } = useContext(ReactContext)
 
-
-  const navigateHandler = () => {
-    navigate('/foodmenu')
-  }
-
-
-
   return (
     <div className='cart'>
       <h1>Cart Item</h1>
@@ -71,8 +64,9 @@ const Cart = () => {
               <p className='total_prize'>₹ {getTotalAmount() + 10}</p>
             </div>
             <div className="Total_btn">
-            <button className='process_btn'>Process TO CheckOut</button>
-            <button className='close_button'onClick={navigateHandler}>Close</button>
+              {getTotalAmount()>0 ? <button className='process_btn' onClick={()=>navigate("/success/buy")}>Process TO CheckOut</button>:<></>}
+            
+            <button className='close_button'onClick={()=>navigate('/foodmenu')}>Close</button>
 
             </div>
           </div>

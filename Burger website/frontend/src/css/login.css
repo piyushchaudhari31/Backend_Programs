@@ -1,0 +1,85 @@
+/* Video Background */
+.video_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* behind login modal */
+}
+
+.video_container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login {
+    position: fixed;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.86); 
+    display: grid;
+    place-items: center;
+    z-index: 9999;      
+}
+
+.login_container {
+    width: max(23vw, 330px);
+    background-color: white;
+    color: #808080;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 35px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    animation: fadeIn 0.5s;
+}
+
+.login_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.login_input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login_input input {
+    outline: none;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Button */
+.login_container button {
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: tomato;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login_condition {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -15px;
+}
+
+.login p span {
+    color: tomato;
+    cursor: pointer;
+    font-weight: 500;
+}
