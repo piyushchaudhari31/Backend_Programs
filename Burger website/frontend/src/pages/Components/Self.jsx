@@ -1,7 +1,46 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../css/self.css'
+import { ReactContext } from '../../context/Context';
 
 const Self = () => {
+
+  const {token} = useContext(ReactContext)
+  
+  const [result, setResult] = React.useState("");
+
+  const submitHandler = async (event) => {
+    event.preventDefault();
+
+    if(!token){
+      alert("Login First")
+      return;
+      
+    }
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "ff5d0d1c-8060-4641-a75e-b3c281758dec");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully ✅");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  }
+
+  const InputHandler = ()=>{
+    
+  }
+  
   return (
     <div className='self'>
       <div className="about_name">
@@ -25,14 +64,24 @@ const Self = () => {
       </div>
       <div className="subscribe">
         <h1>Subscribe</h1>
-        <div className="input">
-            <input type="text" placeholder='Enter your email here'/>
-            <button>Subscribe</button>
+       <form onSubmit={submitHandler}>
+        <div className="name_input">
+        <input type="text" name="firstname" placeholder='FirstName' required/>
+        <input type="text" name="Lastname" placeholder='LastName' required/>
         </div>
+        <div className="email_input">
+          <input type="email" name="email" placeholder='you@gmail.com' required/>
+        </div>
+        <textarea name="message" placeholder='any Problem ?' required></textarea>
+        
+         <button type="submit">Submit</button>
+
+        
+      </form>
+        <p>{result}</p>
 
       </div>
     </div>
   )
 }
-
 export default Self

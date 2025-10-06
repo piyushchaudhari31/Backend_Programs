@@ -63,7 +63,6 @@ async function loginUser(req,res){
     }
 
     const token = jwt.sign({id:isEmail._id},process.env.JWT_SECRET_KEY)
-    console.log(token);
     
 
     

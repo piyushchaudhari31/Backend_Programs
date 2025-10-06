@@ -12,6 +12,9 @@
     flex-direction: column;
     gap: 2rem;
 }
+a{
+text-decoration: none;
+}
 .about_name p{
     width: 70%;
     font-family: light;
@@ -37,34 +40,54 @@
 }
 .subscribe{
     text-align: center;
-    width: 33%;
+    width: 35%;
 }
-.subscribe .input{
-    margin-top: 1.2rem;
+.input{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 10px;
 }
-.subscribe .input input{
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.name_input{
+    display: flex;
+    gap: 5px;
+    margin-top: 1rem;
+}
+.name_input input{
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 10px;
+    border: none;
     outline: none;
+    background-color: rgb(226, 225, 225);
+}
+ .email_input input{
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgb(226, 225, 225);
     border: none;
-    background-color: #F4F4F4;
-    font-size: 0.9rem;
-    text-align: center;
-
+    border-radius: 10px;
+    outline: none;
+}
+.subscribe textarea{
+    padding: 0.8rem;
+    background-color: rgb(226, 225, 225);
+    border: none;
+    border-radius: 10px;
+    outline: none;
 }
 
-
-.subscribe .input button{
-    padding: 1rem;
-    border-radius: 2rem;
+.subscribe button{
     background-color: tomato;
-    color: white;
     border: none;
+    padding: 0.8rem;
     cursor: pointer;
+    outline: none;
 }
-a{
-text-decoration: none;
+
+.subscribe p{
+    margin-top: 1.2rem;
 }

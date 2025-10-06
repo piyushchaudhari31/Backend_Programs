@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
   const navigate = useNavigate()
-  const { cartitem, menuList, fetchfood, remove_to_cart, getTotalAmount } = useContext(ReactContext)
+  const { cartitem, menuList, fetchfood, remove_to_cart, getTotalAmount ,token} = useContext(ReactContext)
 
   return (
     <div className='cart'>
@@ -64,7 +64,9 @@ const Cart = () => {
               <p className='total_prize'>₹ {getTotalAmount() + 10}</p>
             </div>
             <div className="Total_btn">
-              {getTotalAmount()>0 ? <button className='process_btn' onClick={()=>navigate("/success/buy")}>Process TO CheckOut</button>:<></>}
+              {getTotalAmount()>0 && token ? 
+                
+              <button className='process_btn' onClick={()=>navigate("/success/buy")}>Process TO CheckOut</button>:<></>}
             
             <button className='close_button'onClick={()=>navigate('/foodmenu')}>Close</button>
 

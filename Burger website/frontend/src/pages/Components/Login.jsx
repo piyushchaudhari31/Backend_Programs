@@ -9,7 +9,7 @@ import {Navigate, useNavigate} from 'react-router-dom'
 
 
 const Login = () => {
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit,reset } = useForm()
     const [currentstate, setcurrentstate] = useState("login")
     const {token,setToken} = useContext(ReactContext)
     const navigate = useNavigate()
@@ -22,7 +22,9 @@ const Login = () => {
                     const response = await axios.post("http://localhost:3000/auth/login",data,{withCredentials:true})
                     toast.success(response.data.message);  
                     setToken(response.data.token)
+                    reset()
                     localStorage.setItem("token",response.data.token) 
+                    
                     navigate('/')
                                         
                 } catch (error) {
@@ -38,6 +40,8 @@ const Login = () => {
                 try {
                     const response = await axios.post("http://localhost:3000/auth/register",data,{withCredentials:true})
                     toast.success(response.data.message)
+                    setcurrentstate("login")
+                    reset()
                 } catch (error) {
                     if(error.response){
                         toast.error(error.response.data.message)

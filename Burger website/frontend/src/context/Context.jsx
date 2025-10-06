@@ -26,13 +26,19 @@ const Context = (props) => {
   }
 
   const add_to_cart = (item)=>{
+    if(!token){
+      alert("Login First")
+      return;
+    }
     if(!cartitem[item]){
       setcartitem((prev)=>({...prev , [item]:1}))      
     }
     else{
       setcartitem((prev)=>({...prev,[item]:prev[item]+1}))
-      
-      
+    }
+    if(!token){
+      alert("Login First")
+
     }
     
 
