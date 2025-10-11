@@ -5,12 +5,12 @@ import axios from 'axios'
 import '../css/displaymenu.css'
 const Displaymenu = () => {
 
-    const {fetchfood , category , menuList} = useContext(ReactContext)
+    const {fetchfood , category , menuList,menu} = useContext(ReactContext)
     
     
     useEffect(()=>{
       fetchfood()
-    },[])
+    },[menuList])
     
   return (
     <div>

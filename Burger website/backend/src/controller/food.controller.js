@@ -5,9 +5,11 @@ const {v4:uuidv4} = require('uuid')
 async function addFood(req,res){
     const {name,price,category} = req.body
     const file = req.file
+    if (!file) {
+        return res.status(400).json({ message: "No file uploaded" });
+    }
 
     const upload = await uploadImage(file.buffer,`${uuidv4()}`)
-    console.log(upload.url);
 
     const food = await foodModel.create({
         image:upload.url,
